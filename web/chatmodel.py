@@ -149,7 +149,7 @@ def generate_first_responce(emotion):
     response = client.chat.completions.create(
     model="gpt-4o",
     messages=[
-            {"role": "system", "content": "Your role is to write comments on the posts entered by the person on the site. Emotion is an analysis of a face photo. You must answer in Korean."},
+            {"role": "system", "content": "Your role is to talk to the user in real time. Emotion is an analysis of a face photo. You must answer in Korean."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.9,
