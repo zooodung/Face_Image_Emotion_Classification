@@ -6,12 +6,12 @@ import dlib
 from openai import OpenAI
 import os
 
-client = OpenAI(api_key='none')
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 #모델 및 디텍터 불러오기
 model = load_model('efficientnet_face_emotion.h5')
-emotion_labels = ['anger', 'happy', 'panic', 'sadness']
+emotion_labels = ['화남', '행복', '놀람', '슬픔']
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
@@ -91,23 +91,27 @@ def predict_emotion(img_array):
 
 def generate_response(emotion, diary, attitude):
     prompt = f"""
-    사용자의 감정과 일기를 보고 답변을 생성하여야함.
-    1. 감정과 일기의 내용이 맞지 않으면, 그것을 고려해서 답변함
-    2. 태도를 명확히 지켜서 대답해야함
-    3. 추상적이고, 일관적인 답변을 하지 않아야함
-    4. SNS에 달리는 댓글처럼 답변하여야함
+    사용자의 얼굴 감정과 일기를 보고 답변을 생성하여야함.
+    1. 태도를 명확히 지켜서 대답해야함.
+    2. 추상적이고, 일관적인 답변을 하지 않아야함.
+    3. SNS에 달리는 댓글처럼 답변하여야함.
+    4. 친구처럼 반말로 댓글을 달아야함.
+    5. 300자 내외로 작성하여야함.
 
-    감정 : {emotion}
+    얼굴 감정 : {emotion}
     일기 : {diary}
     태도 : {attitude}
+
+    6.얼굴 감정과 일기에 적힌 내용이 일치하지 않으면, 그것에 대해서 물어야함.
     """
     response = client.chat.completions.create(
     model="gpt-4o",
     messages=[
-            {"role": "system", "content": "Your role is to write comments on the posts entered by the person on the site. You must answer in Korean."},
+            {"role": "system", "content": "Your role is to write comments on the posts entered by the person on the site. Emotion is an analysis of a face photo. You must answer in Korean."},
             {"role": "user", "content": prompt}
         ],
-        temperature=1
+        temperature=0.9,
+        max_tokens=400,
     )
 
     return response.choices[0].message.content

@@ -21,8 +21,8 @@ img_array = model.preprocess_image(file_bytes)
 predicted_emotion = model.predict_emotion(img_array)
 
 # 예제 일기와 태도
-example_diary = "오늘은 정말 행복한 날이었다. 친구들과 함께 놀이공원에 갔는데, 모두들 웃고 즐거워했다. 놀이기구를 타고, 맛있는 음식을 먹으며 행복한 시간을 보냈다. 이 순간들이 계속되길 바란다."
-example_attitude = "조언하기" #조언하기, 공감하기, 위로하기
+example_diary = "오늘 하루 ㄹㅇ 힘들었다. 회사에서 상사한테 ㅈㄴ 혼나고, 팀 프로젝트도 엉망이었음. 점심시간에 잠깐 ㅎㅌㅊ 카페에서 쉬면서 친구한테 카톡으로 털어놨는데, 그래도 조금 나아짐. 퇴근하고 집에 오니 우리 집 강아지가 나를 반겨줘서 그나마 힐링. 요즘 퇴근 후에 넷플릭스 보거나 게임하는데, 뭐 볼지 고민됨. 오늘 밤은 그냥 푹 자고, 내일은 다시 힘내서 출근해야지. 요즘 ㄹㅇ 너무 빡센데, 그래도 화이팅 해야지!"
+example_attitude = "공감하기" #조언하기, 공감하기, 위로하기
 
 response = model.generate_response(predicted_emotion, example_diary, example_attitude)
 
