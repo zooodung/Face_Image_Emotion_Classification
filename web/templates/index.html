@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emotion Detection and Voice Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Emotion Detection and Voice Chat</h1>
+  
+  <div class="section">
+    <h2>Upload Image</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Upload</button>
+  </div>
+  
+  <div class="section">
+    <h2>Record Audio</h2>
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()">Stop Recording</button>
+  </div>
+  
+  <div class="section">
+    <audio id="audioPlayer" controls></audio>
+  </div>
+  
+  <script>
+    let recorder;
+    
+    function uploadImage() {
+      const imageInput = document.getElementById('imageInput');
+      const file = imageInput.files[0];
+      const formData = new FormData();
+      formData.append('image', file);
+      
+      fetch('/upload_image', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.blob())
+      .then(blob => {
+        const audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.src = URL.createObjectURL(blob);
+        audioPlayer.play();
+      });
+    }
+    
+    function startRecording() {
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          recorder = new MediaRecorder(stream);
+          recorder.start();
+        });
+    }
+    
+    function stopRecording() {
+      recorder.stop();
+      recorder.ondataavailable = e => {
+        const audioBlob = e.data;
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'input.mp3');
+
+        fetch('/record_audio', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.blob())
+        .then(blob => {
+          const audioPlayer = document.getElementById('audioPlayer');
+          audioPlayer.src = URL.createObjectURL(blob);
+          audioPlayer.play();
+        });
+      };
+    }
+  </script>
+</body>
+</html>
