@@ -4,6 +4,8 @@ from pydub import AudioSegment
 
 app = Flask(__name__)
 
+conversation_history = []
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -20,10 +22,14 @@ def upload_image():
 
 @app.route('/record_audio', methods=['POST'])
 def record_audio():
+    global conversation_history
+    
     audio_file = request.files['audio']
     audio_file.save('input.mp3')
     transcript = stt_function('input.mp3')
-    gpt_response = talk_to_gpt(transcript)
+    
+    gpt_response, conversation_history = talk_to_gpt(transcript, conversation_history)
+    
     tts_function(gpt_response)
     return send_file('output.mp3', mimetype='audio/mpeg')
 

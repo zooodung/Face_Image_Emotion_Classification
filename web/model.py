@@ -10,7 +10,7 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 #모델 및 디텍터 불러오기
-model = load_model('efficientnet_face_emotion.h5')
+model = load_model('efficientnet_face_emotion_new.h5')
 emotion_labels = ['화남', '행복', '놀람', '슬픔']
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')

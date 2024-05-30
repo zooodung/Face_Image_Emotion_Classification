@@ -10,7 +10,7 @@ import os
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 #모델 및 디텍터 불러오기
-emotion_model = load_model('efficientnet_face_emotion.h5')
+emotion_model = load_model('efficientnet_face_emotion_new.h5')
 emotion_labels = ['화남', '행복', '놀람', '슬픔']
 
 #stt를 불러오는 함수
@@ -25,21 +25,22 @@ def stt_function(audio_file):
     )
     return transcription.text
 
-def talk_to_gpt(prompt):
+def talk_to_gpt(prompt, conversation_history=[]):
     """
     주어진 프롬프트를 사용하여 GPT-4o 모델과 대화합니다.
     """
+    conversation_history.append({"role": "user", "content": prompt})
+    
     response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-            {"role": "system", "content": "Your role is to talk to the user in real time. You must answer in Korean."},
-            {"role": "user", "content": prompt}
-        ],
+        model="gpt-4o",
+        messages=[{"role": "system", "content": "Your role is to talk to the user in real time. You must answer in Korean."}] + conversation_history,
         temperature=0.9,
-        max_tokens=400,
     )
-    gpt_Response = response.choices[0].message.content
-    return gpt_Response
+    
+    reply = response.choices[0].message.content
+    conversation_history.append({"role": "assistant", "content": reply})
+    
+    return reply, conversation_history
 
 def tts_function(text):
     """
