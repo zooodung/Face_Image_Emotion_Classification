@@ -1,5 +1,5 @@
 async function generateSpeech(text) {
-    const apiKey = "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"; 
+    const apiKey = "apikey"; 
     const url = "https://api.openai.com/v1/audio/speech";
   
     const response = await fetch(url, {
