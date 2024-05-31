@@ -17,7 +17,6 @@ class AI_Profile {
   }
 }
 
-// AI 이미지 생성
 const ai_Anna = new AI_Profile('Anna', 'assets/images/123.png');
 const ai_Kevin = new AI_Profile('Kevin', 'assets/images/ai_profile_img4.png');
 const ai_Drake = new AI_Profile('Drake', 'assets/images/ai_profile_img8.png');

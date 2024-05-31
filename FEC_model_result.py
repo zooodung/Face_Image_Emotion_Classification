@@ -12,7 +12,6 @@ def cropface_dlib(image, padding=100):
     detector = dlib.get_frontal_face_detector()
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = detector(gray)
-
     for face_index, face in enumerate(faces):
         x, y, w, h = face.left(), face.top(), face.width(), face.height()
 

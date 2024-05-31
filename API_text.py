@@ -1,6 +1,6 @@
 import openai
 
-client = openai.OpenAI(api_key='apikey') 
+client = openai.OpenAI(api_key='apikeys') 
 
 #if (aicharacter == 'Anna'):
 #    ai_concept = "20대 여성이 자주 사용하는 말투와 단어, 유행어, 줄임말 등을 선택하고 여성들의 대화 특징을 매우 두드러지게 표현해야함."

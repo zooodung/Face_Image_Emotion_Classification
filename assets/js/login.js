@@ -8,7 +8,7 @@ document.getElementById('login-button').addEventListener('click', () => {
     // 로그인 성공 시
     alert('로그인 성공!');
     window.location.href = 'main_profile.html';
-  
+
     // 로그인 실패 시
     //alert('로그인 실패! 아이디 또는 비밀번호를 확인하세요.');
 });

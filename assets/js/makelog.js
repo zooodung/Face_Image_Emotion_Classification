@@ -129,7 +129,6 @@ document.querySelector('.confirm-btn').addEventListener('click', async function 
     console.error("오류 발생:", error);
   }
 });
-
 window.onload = setDefaultDate;
 
 function getTodayKST() {

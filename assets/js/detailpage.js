@@ -191,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   speakerIcon.style.width = '30px'; // 이미지 가로 크기
   speakerIcon.style.height = '30px'; // 이미지 세로 크기
-
   ttsButton.addEventListener('click', () => {
     generateSpeech(aianswer)
     //synthesizeSpeech(aianswer)

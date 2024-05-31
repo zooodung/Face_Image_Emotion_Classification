@@ -15,5 +15,4 @@ async function synthesizeSpeech(answer) {
       console.error("Error synthesizing speech:", error);
     }
 }
-
 export {synthesizeSpeech}

@@ -35,4 +35,3 @@ class UserProfile {
   // const user = new UserProfile("홍길동", "I'm Hong Kildong"); // user 객체는 서버에서 가져옴
   
   export { UserProfile, UserEmotion };
-  

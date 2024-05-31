@@ -36,6 +36,4 @@ async function play_tts(answer) {
     }
   }
   
-
-
 export {play_tts}
