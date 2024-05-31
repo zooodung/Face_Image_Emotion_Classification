@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Name</title>
+    <link rel="stylesheet" href="../assets/css/make_log.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff" as="font" type="font/woff" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="container">
+        <form id="dataForm" onsubmit="handleFormSubmit(event)" enctype="multipart/form-data">
+            <div class="inputs">
+                <div class="image-section">
+                    <div class="image-upload"></div>
+                    <input type="file" accept="image/*" class="upload-btn" id="imageInput" name="imageInput" required>
+                    오늘의 감정이 담긴 얼굴 사진을 업로드 해주세요!
+                </div>
+                <div class="text-upload">
+                    <div class="date-picker">
+                        <div class="input-box">
+                            <label for="year">YEAR</label>
+                            <input type="number" id="year" name="year" min="2000" max="2100" style="width: 90px;" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="month">MONTH</label>
+                            <input type="number" id="month" name="month" min="1" max="12" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="date">DATE</label>
+                            <input type="number" id="date" name="date" min="1" max="31" required>
+                        </div>
+                    </div>
+                    <textarea id="textInput" name="textInput" placeholder="How was your day?" required></textarea>
+                    <button type="submit" class="confirm-btn">작성 완료</button>
+                </div>
+            </div>
+            <p id="feedbackMessage"></p>
+        </form>
+        <script src="../assets/script/make_log.js"></script>
+    </div>
+</body>
+</html>
