@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo-container img {
+    max-width: 150px;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+  }
+  
+  #login-button {
+    background-color: #1da72f;
+    justify-content: center; /* 가로 중앙 정렬 */
+    color: white;
+    padding: 10px 20px;
+    display: block; /* 버튼을 블록 요소로 변경하여 가로 너비를 100%로 설정 */
+    margin: 0 auto; /* 버튼의 좌우 여백을 자동으로 설정하여 가운데 정렬 */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  #login-button:hover {
+    background-color: rgba(22, 122, 39, 0.521);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: #ffffff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 효과 */
+  }
