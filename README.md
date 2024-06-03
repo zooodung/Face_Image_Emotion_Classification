@@ -69,12 +69,12 @@
 #### Train Data Label 데이터 검증
 ![](https://velog.velcdn.com/images/zoodung/post/a94cf628-efd9-4ed9-99c6-a092b9748878/image.png)
 - 0 same, 1same 아웃라이어 판단<br>
-- 2 same, 3same 학습데이터 활용<br>
+- 2 same, 3same 학습 데이터 활용<br>
 1. anger : 1118
 2. happy : 1474
 3. panic : 1102
 4. sadness : 1120
->데이터의 균형을 위해 각 감정별 상위 1102개 활용 판단
+>데이터의 균형을 위해 각 감정별 상위 1102개 활용 결정
 
 #### Test Data Label 데이터 검증
 ![](https://velog.velcdn.com/images/zoodung/post/af8f2bfc-5ad2-4ee8-84ec-4650344f41cc/image.png)<br>
