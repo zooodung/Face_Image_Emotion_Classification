@@ -48,8 +48,8 @@
 ### 🔍 EDA
 #### Train Data Img counts 
 - anger : 1500개 <br>
-- happy : 1495개 <br>
-- panic : 1501개<br>
+- happy : 1495개 (중복 데이터 1개) <br>
+- panic : 1501개 (중복 데이터 1개) <br>
 - sadness : 1500개
 - Sum of ALL : 5996개
 #### Validation Data Img counts 
