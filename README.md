@@ -1,7 +1,8 @@
-<div style="text-align: center;">
+<div align=center>	
+ 
+</div>
 
-## 얼굴 이미지 감정 분류 모델링,
-## Web Service 'FaceLog' Project
+## 얼굴 이미지 감정 분류 모델링<br>Web Service 'FaceLog' Project
 
 <br>
 
