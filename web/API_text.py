@@ -67,7 +67,7 @@ def stt_function(audio_file_path):
                 model="whisper-1",
                 file=audio_file
             )
-            transcript = transcription 
+            transcript = transcription.text 
             return transcript
     except FileNotFoundError:
         return "Audio file not found."

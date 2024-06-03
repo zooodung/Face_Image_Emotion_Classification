@@ -71,41 +71,50 @@ function uploadImage() {
     .catch(error => console.error('Error uploading image:', error));
   }
 
-function toggleRecording() {
+  async function toggleRecording() {  // 함수에 async 추가
     const recordIcon = document.getElementById('recordIcon');
-  
+
     if (!isRecording) {
-      // 녹음 시작
-      navigator.mediaDevices.getUserMedia({ audio: true })
-        .then(stream => {
-          recorder = new MediaRecorder(stream);
-          recorder.start();
-          recordIcon.src = "https://upload.wikimedia.org/wikipedia/commons/b/b3/Circle-icons-stop.svg";
-          isRecording = true;
-        })
-        .catch(error => console.error("Error getting audio stream:", error));
+        try {  // 에러 처리를 위해 try-catch 블록 추가
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });  // async/await 사용
+            recorder = new MediaRecorder(stream);
+            recorder.start();
+            recordIcon.src = "https://upload.wikimedia.org/wikipedia/commons/b/b3/Circle-icons-stop.svg";
+            isRecording = true;
+
+            return new Promise((resolve) => {  // Promise 반환
+                recorder.ondataavailable = async (e) => {
+                    const audioBlob = e.data;
+                    const formData = new FormData();
+                    formData.append('audio', audioBlob, 'input.mp3');
+
+                    try {  // 에러 처리를 위해 try-catch 블록 추가
+                        const response = await fetch('/record_audio', {  // async/await 사용
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        if (!response.ok) {  // 네트워크 응답 확인
+                            throw new Error('Network response was not ok.');
+                        }
+
+                        const data = await response.json();
+                        resolve(data.response);  // Promise resolve
+                    } catch (error) {  // 에러 처리
+                        console.error("Error recording audio:", error);
+                        resolve("Error recording audio");  // 에러 발생 시에도 Promise resolve
+                    }
+
+                    recordIcon.src = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Circle-icons-microphone.svg";
+                    isRecording = false;
+                };
+            });
+        } catch (error) {  // 에러 처리
+            console.error("Error getting audio stream:", error);
+            return "Error getting audio stream";
+        }
     } else {
         // 녹음 중지
         recorder.stop();
-        recorder.ondataavailable = e => {
-            const audioBlob = e.data;
-            const formData = new FormData();
-            formData.append('audio', audioBlob, 'input.mp3');
-
-            fetch('/record_audio', {
-            method: 'POST',
-            body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok.');
-                }
-                return response.json();
-            })
-            .catch(error => console.error("Error recording audio:", error));
-
-            recordIcon.src = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Circle-icons-microphone.svg";
-            isRecording = false;
-      };
     }
 }

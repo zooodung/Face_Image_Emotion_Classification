@@ -24,6 +24,7 @@ from API_text import generate_response, stt_function, talk_to_gpt, generate_firs
 app = FastAPI()
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
+conversation_history = []
 
 # CORS 설정 추가
 origins = [
