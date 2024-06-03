@@ -1,0 +1,410 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/************************************************************************
+// =Navbar
+*************************************************************************/
+
+.navbar-default {
+    background: #ffffff;
+    border: none;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  .navbar.active {
+    position: fixed;
+    opacity: 0.95;
+    border: 1px solid #E8E8E8;
+  }
+  
+  .navbar-nav {
+    margin: 7.5px -10px;
+  }
+  
+  .navbar-default .navbar-nav > li > a {
+    color: #060606;
+    text-transform: uppercase;
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -ms-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+  }
+  
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > 
+  .active > a:focus {
+    background: transparent;
+    color: #fc6e51;
+  }
+  
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #030100;
+  }
+  
+  .dropdown-menu {
+    top: 117%;
+    font-size: 12px;
+    text-transform: uppercase;
+      -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 2px;
+    border-top: 0;
+    padding: 12px 5px;
+  }
+  
+  .dropdown-menu>li>a {
+    padding: 3px 15px;
+    line-height: 1.7;
+    letter-spacing: 2px;
+  }
+  
+  .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: #fff;
+    color: #fc6e51;
+  }
+  
+  .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: #fff;
+    color: #fc6e51;
+  }
+  
+  .navbar-default .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background_ai3.png') !important;
+    background-size: 100% 120%; /* 가로, 세로 모두 100% */
+    background-repeat: no-repeat; /* 반복 없음 */
+    background-position: center; /* 가운데 정렬 */
+    /*background-size: cover;*/
+    background-position: center;
+    opacity: 0.2; /* 불투명도 조절 */
+    z-index: -1; /* 배경 이미지를 뒤로 보내기 */
+  }
+    
+.logtime {
+  margin-top: 15px;
+  margin-left: 64%;
+  align-items: center;
+  display: flex;         /* Enable flexbox for vertical alignment */
+  justify-content: center;
+  background-color: lightgray;
+  box-shadow: 2px 3px 8px rgb(5, 1, 1);
+  width: 200px;
+  height: 50px;
+  color: #323232;
+  font-family: 'Poppins', sans-serif; 
+  font-weight: bold;
+  border-radius: 40px 40px 40px 40px;
+  font-size: 20px;
+}
+
+  /* User Container */
+.user_container {
+    margin-top: 5%;
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* 가로 중앙 정렬 */
+    padding: 20px; /* Optional padding for spacing */
+    background-color: #272727c9;
+    box-shadow: 2px 5px 8px rgb(5, 1, 1);
+    height: 400px;
+}
+
+/* Empty Square */
+.empty-square {
+    width: 300px; /* Adjust size as needed */
+    height: 300px;
+    background-color: rgba(211, 211, 211, 0.705); /* Or use an image */
+    margin-right: 50px; /* Space between square and input */
+    display: flex; /* 이미지를 가운데 정렬하기 위해 추가 (선택 사항) */
+    justify-content: center; /* 가로 가운데 정렬 (선택 사항) */
+    border-radius: 35px;
+    align-items: center; /* 세로 가운데 정렬 (선택 사항) */
+    box-shadow: 2px 5px 8px rgb(5, 1, 1);
+}
+
+.empty-square2 {
+    width: 600px; /* Adjust size as needed */
+    height: 300px;
+    border-radius: 35px;
+    background-color: rgba(211, 211, 211, 0.705); /* Or use an image */
+    margin-right: 20px; /* Space between square and input */
+    display: flex; /* 이 부분을 추가하여 가로 정렬 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    box-shadow: 2px 5px 8px rgb(5, 1, 1);
+}
+
+.empty-square img {
+  max-width: 95%;  
+  max-height: 95%; 
+  object-fit: contain; 
+}
+
+
+/* Header Boxes */
+.header-box {
+    text-align: center;
+    height: 70px; /* Make all boxes the same height */
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgb(48, 47, 47), 0 1px 0 rgb(48, 47, 47);
+}
+
+.white-box {
+    background-color: rgb(248, 246, 246);
+    color: black; 
+    flex: 3; /* Take up 3 parts of the space */
+    align-items: center;
+    display: flex;         /* Enable flexbox for vertical alignment */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 40px 0px 0px 40px;
+    font-weight: Bold;
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.black-box1 {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    flex: 2;
+    align-items: center;
+    display: flex;         /* Enable flexbox for vertical alignment */
+    justify-content: center;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: Bold;
+    font-size: 25px;
+}
+
+.black-box2 {
+    background-color: rgb(59, 59, 59);
+    color: white;
+    flex: 1;
+    margin-right: 20px;
+    border-radius: 0px 40px 40px 0px;
+    display: flex;
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+.black-box2 img {
+    width: 50px;
+    height: 50px;
+}
+
+  
+.text-container {
+    margin-top: 20px; /* header-box와 텍스트 사이 간격 */
+    text-align: center;  /* 텍스트 가운데 정렬 */
+    background-color: #f0f0f0;
+}
+
+.header-wrapper { /* 새로 추가된 클래스 */
+    display: flex;
+}
+
+#text-display {
+    height: 120px; 
+    padding: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #f0f0f0;
+    font-family: 'GmarketSansMedium', sans-serif;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    background-color: #f0f0f0;
+    box-shadow: 0px 2px 3px rgb(5, 1, 1);
+    overflow-y: auto; /* 세로 스크롤바 자동 생성 */
+    border-radius: 25px;
+    display: flex;        /* flexbox 적용 */
+    align-items: center;  /* 세로 가운데 정렬 */
+}
+
+/* AI Container */
+.ai-containers-wrapper { /* .ai-container의 부모 요소 */
+  display: grid;          /* 또는 display: grid; */
+  flex-direction: column; /* 세로 방향으로 배치 */
+  justify-content: center; /* 또는 place-items: center; */
+}
+
+.ai-container {
+    display: flex;
+    background-color:  rgba(211, 211, 211, 0.87);
+    flex-direction: column; /* ai-container 내부 요소를 세로로 배치 */
+    width: 900px;
+    justify-content: center; /* 가로 중앙 정렬 */
+    border-radius: 25px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 4px rgb(79, 79, 79);
+}
+
+
+.top-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: 90px;
+
+}
+
+
+
+
+/* AI Empty Containers */
+.ai-empty-container1 {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    background-color: rgba(245, 245, 243, 0.725); /* Or use an image */
+    display: flex; /* 이미지를 가운데 정렬하기 위해 추가 (선택 사항) */
+    justify-content: center; /* 가로 가운데 정렬 (선택 사항) */
+    margin-left: 40px;
+    margin-right: 50px; /* Space between square and input */
+    margin-top: 25px;
+    margin-bottom: 0px;
+    border-radius: 50%;
+    border: 1px solid rgba(199, 199, 198, 0.725);
+    box-shadow: 0 4px 4px rgb(48, 47, 47); 
+    overflow: hidden;
+    align-items: center; /* 세로 가운데 정렬 (선택 사항) */
+}
+
+.ai-empty-container1 img {
+  width: 100%; /* 컨테이너 너비에 맞춤 */
+  height: 100%; /* 컨테이너 높이에 맞춤 */
+  object-fit: cover; /* 이미지를 컨테이너에 맞게 잘라내고 채움 */
+  border-radius: 50%;
+}
+
+.ai-empty-container2 {
+    width: 600px; /* Adjust size as needed */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    height: 220px;
+    border-radius: 35px;
+    background-color: rgb(255, 255, 255); /* Or use an image */
+    overflow-y: auto; /* 세로 스크롤바 자동 생성 */
+    box-shadow: 0 2px 5px rgb(48, 47, 47), 0 -0.1px 0 rgb(48, 47, 47); 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 30px;
+    display: flex;
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 15px;
+    text-align: left; 
+    border-radius: 25px;
+    align-items: left;  
+    justify-content: center; /* 가로 가운데 정렬 (선택 사항) */
+    padding: 20px;
+    word-wrap: break-word;
+    line-height: 1.1;
+    flex-wrap: wrap;
+}
+
+.ai-empty-container2 .text-wrapper {
+  padding: 10px; /* 또는 원하는 값으로 조절 */
+}
+
+
+
+/* ai-empty-container3 스타일 수정 */
+.ai-empty-container3 {
+  width: 100px; /* 원하는 크기로 조절 */
+  height: 40px;
+  background-color: rgb(245, 243, 243); /* 또는 이미지 사용 */
+  border-radius: 30px;
+  margin-right: 110px;
+  box-shadow: 0 1px 1px rgb(48, 47, 47);
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 130%;
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 좋아요 버튼 스타일 */
+.like-button {
+  background-color: rgba(211, 211, 211, 0);
+  border: none;
+  color: white;
+  object-fit: contain;
+  display: inline-block;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* 싫어요 버튼 스타일 */
+.hate-button {  
+  background-color: rgba(211, 211, 211, 0);
+  border: none;
+  color: white;
+  object-fit: contain;
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 150px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.like-button:hover img {
+  filter: drop-shadow(0 0 8px rgb(0, 123, 247)); /* Glow effect */
+  transform: translateY(-1px);
+}
+
+
+.hate-button:hover img {
+  filter: drop-shadow(0 0 8px rgb(248, 1, 1)); /* Glow effect */
+  transform: translateY(-1px);
+}
+
+
+#empty-square img { 
+  width: 90%;   
+  height: auto;
+  box-shadow: 0 2px 3px rgb(5, 5, 5); 
+  border-radius: 50px; /* 원형으로 만들기 */
+}
+
+.tts-button {  
+  background-color: rgba(211, 211, 211, 0);
+  border-radius: 40%; 
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 250px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.tts-button:hover img {
+  filter: drop-shadow(0 0 8px rgb(0, 255, 98)); /* Glow effect */
+  transform: translateY(-1px);
+}
+

@@ -1,0 +1,187 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /************************************************************************
+  // =Navbar
+  *************************************************************************/
+  
+  .navbar-default {
+      background: #ffffff;
+      border: none;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .navbar.active {
+      position: fixed;
+      opacity: 0.95;
+      border: 1px solid #E8E8E8;
+    }
+    
+    .navbar-nav {
+      margin: 7.5px -10px;
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+      color: #060606;
+      text-transform: uppercase;
+      -webkit-transition: color .3s ease-in-out;
+      -moz-transition: color .3s ease-in-out;
+      -ms-transition: color .3s ease-in-out;
+      -o-transition: color .3s ease-in-out;
+      transition: color .3s ease-in-out;
+    }
+    
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > 
+    .active > a:focus {
+      background: transparent;
+      color: #fc6e51;
+    }
+    
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+      color: #030100;
+    }
+    
+    .dropdown-menu {
+      top: 117%;
+      font-size: 12px;
+      text-transform: uppercase;
+        -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: 2px;
+      border-top: 0;
+      padding: 12px 5px;
+    }
+    
+    .dropdown-menu>li>a {
+      padding: 3px 15px;
+      line-height: 1.7;
+      letter-spacing: 2px;
+    }
+    
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+      background-color: #fff;
+      color: #fc6e51;
+    }
+    
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+      background-color: #fff;
+      color: #fc6e51;
+    }
+    
+    .navbar-default .dropdown:hover>.dropdown-menu {
+      display: block;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background_ai3.png') !important;
+      background-size: 120% 120%; /* 가로, 세로 모두 100% */
+      background-repeat: no-repeat; /* 반복 없음 */
+      background-position: center; /* 가운데 정렬 */
+      /*background-size: cover;*/
+      background-position: center;
+      opacity: 0.3; /* 불투명도 조절 */
+      z-index: -1; /* 배경 이미지를 뒤로 보내기 */
+    }
+    
+    .container {
+
+      display: flex; /* Flexbox 활성화 */
+      flex-direction: column; /* 세로 방향 정렬 유지 */
+
+      background-color: rgba(255, 255, 255, 0.85); /* 흰색 배경, 불투명도 0.8 (80%) */
+    }
+      
+
+    .setting-container {
+        width: 700px; /* 원하는 너비로 조절 */
+        height: 750px;
+        margin: 130px auto; /* 위아래 50px, 좌우 자동으로 가운데 정렬 */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 50%;
+        padding: 30px;
+        background-color: #fdfdfdbd;
+        box-shadow: 2px 3px 6px rgb(66, 66, 66), -2px -3px 30px rgb(128, 125, 125);
+        font-family: 'GmarketSansMedium', sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: #e4e4e4;
+      }
+      .setting-container::before {
+        white-space: pre;
+        content: "  A \A        I";
+        line-height: 0.5; /* 줄 간격 줄이기 */
+        position: absolute;
+        margin-left: 20px;
+        top: 63%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+        font-size: 280px; /* 글자 크기 조절 */
+        color: rgba(5, 0, 0, 0.822); /* 투명도 조절 */
+        z-index: -1; /* 배경으로 배치 */
+        font-family: 'GmarketSansMedium', sans-serif; /* 글꼴 설정 */
+      }
+
+      .setting-group {
+        
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 3px;
+        padding-bottom: 11px;
+        border-radius: 80px;
+        margin-bottom: 15px;
+        background-color: #f3f3f57e;
+        color: #3b3a3a;
+        box-shadow: 2px 3px 6px #414344, -2px -3px 10px #414344
+      }
+      
+      .setting-group h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 200;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .save-button {
+        display: block;
+        /* 원하는 너비로 조절 */
+        margin: 20px auto; /* 컨테이너와의 간격 및 가운데 정렬 */
+        margin-top: 5px;
+        padding: 10px 20px;
+        background-color: #789779; /* 배경색 */
+        box-shadow: 2px 3px 6px #6c856e, -2px -3px 5px #6c856e;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 1000;
+        color: #ebebe8; /* 글자색 */
+        border: none;
+        border-radius: 50px; /* 둥근 모서리 */
+        cursor: pointer; /* 커서 모양 변경 */
+        font-family: 'GmarketSansMedium', sans-serif;
+        font-size: 16px;
+      }
+      
+      .save-button:hover {
+        background-color: #62976262; /* 호버 시 배경색 변경 */
+        transform: translateY(-1px); 
+        color: #789779;
+        transition: background-color 0.4s ease, box-shadow 0.4s ease; /* 부드러운 전환 효과 */
+      }

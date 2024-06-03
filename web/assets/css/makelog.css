@@ -1,0 +1,348 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /************************************************************************
+  // =Navbar
+  *************************************************************************/
+  
+  .navbar-default {
+      background: #ffffff;
+      border: none;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .navbar.active {
+      position: fixed;
+      opacity: 0.95;
+      border: 1px solid #E8E8E8;
+    }
+    
+    .navbar-nav {
+      margin: 7.5px -10px;
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+      color: #060606;
+      text-transform: uppercase;
+      -webkit-transition: color .3s ease-in-out;
+      -moz-transition: color .3s ease-in-out;
+      -ms-transition: color .3s ease-in-out;
+      -o-transition: color .3s ease-in-out;
+      transition: color .3s ease-in-out;
+    }
+    
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > 
+    .active > a:focus {
+      background: transparent;
+      color: #fc6e51;
+    }
+    
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+      color: #030100;
+    }
+    
+    .dropdown-menu {
+      top: 117%;
+      font-size: 12px;
+      text-transform: uppercase;
+        -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: 2px;
+      border-top: 0;
+      padding: 12px 5px;
+    }
+    
+    .dropdown-menu>li>a {
+      padding: 3px 15px;
+      line-height: 1.7;
+      letter-spacing: 2px;
+    }
+    
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+      background-color: #fff;
+      color: #fc6e51;
+    }
+    
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+      background-color: #fff;
+      color: #fc6e51;
+    }
+    
+    .navbar-default .dropdown:hover>.dropdown-menu {
+      display: block;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    opacity: 0.95; /* 불투명도 조절 */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background16.png');
+  background-size: 120% 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3; /* 배경 이미지의 불투명도만 조절 */
+  z-index: -1; 
+}
+  
+/* make date */
+.date-picker {
+    background-color: #444;
+    box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.1), /* 아래쪽, 오른쪽 그림자 */
+      -5px 5px 10px rgba(41, 41, 41, 0.1), /* 아래쪽, 왼쪽 그림자 */
+      5px -5px 10px rgba(41, 41, 41, 0.1), /* 위쪽, 오른쪽 그림자 */
+      -5px -5px 10px rgba(41, 41, 41, 0.1); /* 위쪽, 왼쪽 그림자 */
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;  /* 모든 요소가 중앙 정렬되도록 조정 */
+    width: fit-content;  /* 컨테이너의 너비를 내부 컨텐츠에 맞춤 */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.input-box {
+    flex-grow: 1;  /* 이 속성을 추가하여 각 입력 박스가 가능한 공간을 채우도록 함 */
+    background-color: #ffffffee;
+    box-shadow: 0 4px 4px rgb(153, 153, 153);
+    padding: 15px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+label {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input[type="number"] {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 36px;
+    width: 70px;
+    outline: none;
+    text-align: center;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #666;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #777;
+}
+/* make log*/
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #8f8e8edc;
+    
+    box-shadow: 0 4px 4px rgb(48, 47, 47);
+    border-radius: 100px;
+    padding: 20px;
+    position: relative;
+    align-items: center;
+}
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #dbdf09;
+    font-family: 'GmarketSansMedium', sans-serif;
+    text-decoration: underline;
+    font-size: 13px;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    text-decoration-color: #9b9b91e1;
+    background-color: #0f0f0f7e;
+    box-shadow: 2px 3px 6px rgb(231, 230, 230), -2px -3px 50px rgb(231, 230, 230);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 15px;
+}
+.image-upload {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #6d6c6c;
+    box-shadow: 0px 4px 4px rgb(48, 47, 47);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.image-upload img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 50px 50px rgb(216, 6, 6);
+    object-fit: cover;  /* Key for aspect ratio & fill */
+    
+}
+.upload-btn {
+    background-color: #6d6c6c;
+    box-shadow: 0 4px 4px rgb(48, 47, 47);
+    text-decoration: none !important; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.text-upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    gap: 20px;
+}
+textarea {
+    width: 100%;
+    /* width: 200px; */
+    height: 180px;
+    padding: 10px;
+    background-color: #444;
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 15px;
+    box-shadow: 0 4px 4px rgb(48, 47, 47);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    resize: none;
+    overflow: auto;
+    /* margin-left: 30px; */
+    margin-bottom: 10px; /* 더 적절한 간격 조정 */
+}
+.confirm-btn {
+    background-color: #c93737;
+    box-shadow: 0 2px 2px #720b0b;
+    color: white;
+    border: none;
+    width: 400px;
+    font-family: 'GmarketSansMedium', sans-serif;
+    height: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.confirm-btn:hover {
+    background-color: #531818; 
+    box-shadow: 0 2px 3px rgb(52, 53, 53); 
+    
+    
+    color: #818181;
+    transform: translateY(-2px); 
+    transition: background-color 0.4s ease, box-shadow 0.4s ease; /* 부드러운 전환 효과 */
+}
+
+#feedbackMessage {
+    margin-top: 20px;
+    color: #FFF;
+}
+
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold;
+    font-size: 30px;
+    color: #f1f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 텍스트 아래에 로딩 스피너 표시 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+.loading-spinner {
+    /* 로딩 스피너 스타일 (원하는 디자인으로 변경) */
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#errorOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  font-family: 'GmarketSansMedium', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #f1f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* 텍스트 아래에 로딩 스피너 표시 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+  opacity: 0; /* 처음에는 숨김 */
+  animation: showError 2.5s forwards; /* 3초 동안 표시 애니메이션 */
+}
+
+@keyframes showError {
+  0% { opacity: 0; }  /* 처음에는 숨김 */
+  10% { opacity: 1; } /* 빠르게 나타남 */
+  90% { opacity: 1; } /* 3초 동안 유지 */
+  100% { opacity: 0; } /* 빠르게 사라짐 */
+}
