@@ -1,9 +1,7 @@
 <div align=center>	
  
 
-## <br>![FaceLog 로고](https://velog.velcdn.com/images/zoodung/post/bb55b2b7-e9e9-476a-80f6-8bdc8dccf209/image.png)<br>얼굴 이미지 감정 분류 모델링<br>Web Service 'FaceLog' Project<br><br>![FaceLog 로고](https://velog.velcdn.com/images/zoodung/post/bb55b2b7-e9e9-476a-80f6-8bdc8dccf209/image.png)
-
-
+## ![FaceLog 로고](https://velog.velcdn.com/images/zoodung/post/bb55b2b7-e9e9-476a-80f6-8bdc8dccf209/image.png)<br>얼굴 이미지 감정 분류 모델링<br>Web Service 'FaceLog' Project
 </div>
 
 ## ✏ 프로젝트 소개
