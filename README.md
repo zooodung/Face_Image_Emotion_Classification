@@ -110,14 +110,7 @@
     zoom_range=0.2,`
 > 각 이미지 증강 방법은 모델에 따라 선택적으로 적용
 ### 🚩 모델링 성능
-- VGG19
-- ResNet -1
-- EmotionNet
-- SVM
-- ViT b16
-- EfficientNet b0
-- EfficientNet b7
-- DeiT
+![](https://velog.velcdn.com/images/zoodung/post/03ac34b7-aee7-4987-adb7-7660dde1f654/image.png)
 
 ## 📚 Web Service 'FaceLog'
 ### 🏁시스템 구성
@@ -250,4 +243,9 @@ def generate_response(emotion, inputText, a_attitude, composition, intensity, le
 > 입력 이미지 데이터, 감정 분류 결과, 입력 텍스트 데이터, 입력 날짜 데이터를 사용자 필드에 출력하고 AI 필드에는 AI 캐릭터 'Anna'와 생성된 답변 텍스트를 출력한다. 
 
 > 오른쪽 하단의 '스피커 이미지 버튼'을 클릭하면 TTS 기능이 실행되며 생성된 텍스트를 음성으로 재생한다.
+
+### 💡동작 로직
+#### 시스템 흐름도
+![](https://velog.velcdn.com/images/zoodung/post/63b8ecee-1239-4be4-a3d8-38aa690335d6/image.png)
+
 
