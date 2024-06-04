@@ -7,10 +7,12 @@
 ## ✏ 프로젝트 소개
 
 ### 얼굴 이미지 감정분류 (😡/😁/😯/😭)
+------
 
 제공받은 IMG DATA/LABEL DATA/SEGMENT DATA로 학습한 머신러닝/딥러닝 모델을 활용해 이미지의 얼굴 객체 인식과 얼굴 객체의 감정을 ANGER/HAPPY/PANIC/SADNESS 분석 및 분류한 후 검증된 성능이 우수한 모델을 선택해 웹 서비스 FaceLog의 입력 데이터 분류에 활용한다.
 
 ### FaceLog 
+------
 개인용 기밀성 SNS 플랫폼의 프로토타입으로 사용자 정보, 얼굴 이미지, 텍스트, 사용자 맞춤형 프롬프트 설정을 입력받아 멀티모달로 처리 및 저장하며 수집한 정보들을 API Prompt에 입력 및 반영하여 AI 캐릭터 ‘Anna'가 SNS 댓글을 생성해 사용자에게 제공한다. 
 사용자가 입력한 모든 데이터와 생성된 데이터는 보호 및 저장되며 메인 프로필 페이지의 캘린더를 통해 언제든지 열람할 수 있다.
 
@@ -28,22 +30,26 @@
 
 ## ⌨ 개발 환경
 ### Language
-<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+------
+<img src="https://img.shields.io/badge/language-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"><img src="https://img.shields.io/badge/3.11.9-515151?style=for-the-badge"><br>
+<img src="https://img.shields.io/badge/language-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
 
-### Framework 
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
-<img src="https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white"> 
-<img src="https://img.shields.io/badge/tensorflow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"> 
-<img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"> 
+### Framework
+------
+<img src="https://img.shields.io/badge/framework-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"><br>
+<img src="https://img.shields.io/badge/framework-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white"><br>
+<img src="https://img.shields.io/badge/framework-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/tensorflow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"><img src="https://img.shields.io/badge/2.15.0-515151?style=for-the-badge"><br>
+<img src="https://img.shields.io/badge/framework-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"> 
 
 ### IDE 
-<img src="https://img.shields.io/badge/visual studio code-007ACC?style=for-the-badge&logo=visual studio code&logoColor=white"> 
-<img src="https://img.shields.io/badge/jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white"> 
+------
+<img src="https://img.shields.io/badge/ide-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/visual studio code-007ACC?style=for-the-badge&logo=visual studio code&logoColor=white"><br>
+<img src="https://img.shields.io/badge/ide-%23121011?style=for-the-badge"><img src="https://img.shields.io/badge/jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white"> 
 
 ## 🫥 얼굴이미지 감정분류 모델링
 ### 🔍 EDA
+------
 #### Train Data Img counts 
 - anger : 1500개 <br>
 - happy : 1495개 (중복 데이터 1개) <br>
@@ -83,6 +89,7 @@
 >
 
 ### ✂ 전처리
+------
 - 얼굴 BOX Crop
   + With Label Data :  Annot_A/B/C의 각 X, Y 좌표의 min, max 값의 각각 평균을 활용해 Crop
   + Without Label Data : Dlib 라이브러리로 얼굴 객체를 인식해 X, Y에 padding 값을 부여하고 Crop
@@ -110,13 +117,16 @@
     zoom_range=0.2,`
 > 각 이미지 증강 방법은 모델에 따라 선택적으로 적용
 ### 🚩 모델링 성능
+------
 ![](https://velog.velcdn.com/images/zoodung/post/03ac34b7-aee7-4987-adb7-7660dde1f654/image.png)
 
 ## 📚 Web Service 'FaceLog'
 ### 🏁시스템 구성
+------
 ![](https://velog.velcdn.com/images/zoodung/post/f83aa48f-cf17-4e22-b025-c93722d66dc1/image.png)
 > 프로토타입 버전은 데이터베이스에 연동 및 저장하지 않아 서버가 reboot되면 사용자의 입력/생성 정보가 초기화 된다.
 ### 💡기능
+------
 #### 🔴 핵심 기능 1. 사용자 입력 이미지의 감정을 분류
 ![](https://velog.velcdn.com/images/zoodung/post/eaff22b4-8fde-4274-b490-6a5634d3f647/image.png)
 ![](https://velog.velcdn.com/images/zoodung/post/1ed6d5b2-cfb0-4278-b2c3-6caf3a730ac0/image.png)
@@ -202,6 +212,7 @@ def generate_response(emotion, inputText, a_attitude, composition, intensity, le
 >상용 서비스의 게시물 수, 팔로잉, 팔로워 기능을 참고했으며 기존에 작성되었던 게시물들의 감정 분류 결과를 누적 카운트 수를사용자에게 보기 쉽게 출력한다.
 
 ### 💻 화면 구성
+------
 #### ✨ 사용자 정보 입력 페이지
 ![](https://velog.velcdn.com/images/zoodung/post/d723d69f-b707-4266-b6fa-5910b9a12f79/image.png)
 >사용자의 이름을 필수로 입력받고 소개는 선택적으로 입력받으며 'GET PROFILE' 버튼을 클릭하면 사용자 프로필을 생성한다.
@@ -244,8 +255,9 @@ def generate_response(emotion, inputText, a_attitude, composition, intensity, le
 
 > 오른쪽 하단의 '스피커 이미지 버튼'을 클릭하면 TTS 기능이 실행되며 생성된 텍스트를 음성으로 재생한다.
 
-### 💡동작 로직
-#### 시스템 흐름도
+### 🚀동작 
+------
+#### ⏳시스템 흐름도
 ![](https://velog.velcdn.com/images/zoodung/post/63b8ecee-1239-4be4-a3d8-38aa690335d6/image.png)
 
 
