@@ -69,10 +69,24 @@
 - sadness : 284개<br>
 - Sum of ALL : 1137개
 
+#### 나이 세대별 감정 추이 시각화 자료
+![](https://velog.velcdn.com/images/zoodung/post/686e7a55-5d85-44c1-8e32-4d042aecbb3b/image.png)
+> 20대와 30대의 얼굴 이미지 데이터 교류가 다른 세대에 비해 약 4.5배로 가장 활발한 것을 확인할 수 있었고 이를 근거로 모델은 20대와 30대에 편향되어 학습될 것이라는 합리적인 추측을 할 수 있었다.
+
+> 따라서, 모델의 결과를 서비스로 받아볼 사용자의 주 수요층을 20대~30대로 설정하게 되었고 해당 세대가 가장 많이 이용하는 서비스인 SNS들의 특징과 장점들을 얼굴 이미지 감정 분류 모델과 결합하는 방향으로 서비스 기획을 진행하였습니다. 
+
+> 
+
 #### Train Data Label 데이터 검증
 ![](https://velog.velcdn.com/images/zoodung/post/a94cf628-efd9-4ed9-99c6-a092b9748878/image.png)
-- 0 same, 1same 아웃라이어 판단<br>
+
+- 0 same, 1same 아웃라이어로 간주<br>
 - 2 same, 3same 학습 데이터 활용<br>
+> 0 same, 1same에 해당하는 이미지를 직접 추적해 확인해본 결과 아웃라이어로 판단하게 되었습니다.
+
+##### Train Data Label 데이터 검증 시각화 자료
+![](https://velog.velcdn.com/images/zoodung/post/a2f9b25a-b9b6-41b6-90b8-0dd1ce6382de/image.png)
+> Match(3 same), 1 Mismatch(2 same), 2 Mismatches(1 same), 3 Mismatches(0 same) 과 같습니다.
 1. anger : 1118
 2. happy : 1474
 3. panic : 1102
@@ -86,7 +100,6 @@
 2. **happy : 97.65%**
 3. **panic : 82.9%**
 4. **sadness : 74.64%**
->
 
 ### ✂ 전처리
 ------
